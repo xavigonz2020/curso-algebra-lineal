@@ -1,28 +1,67 @@
 ---
 title: "prueba2"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(polynom) #LIBRERIA R PARA POLINOMIOS
+library(pracma) #LIBRERIA R PARA POLINOMIOS
+library(reticulate) #LIBRERIA PARA USAR PYTHON EN R
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+POLINOMIO EN R
+```{r}
+p = polynomial(coef = c(1,2,3,4,5))
+print(p)
+q = polynomial(coef = c(1,2,1))
+q
+p == q
+gradoP = length(p)-1
+gradoQ = length(q)-1
+gradoP
+gradoQ
+p+q
+p*q
+cociente = p/q
+resto = p%%q
+cociente
+resto
+q*cociente+resto == p
+predict(p,1)
+predict(q,0)
+polyroot(c(1,2,3,4,5))
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+POLINOMIO EN PYTHON
+```{python}
+import sympy #IMPORTANDO LIBRERIA PYTHON SYMPY
+x = sympy.symbols('x')
+p = sympy.Poly(x**2)
+p
+q = sympy.Poly(1+x+x**3)
+print(q)
+import numpy
+r = numpy.poly1d([1,2,1])
+print(r)
+s = numpy.poly1d([1,2,3,4,5])
+print(s)
+p==q
+r==s
+p.degree()
+q.degree()
+r.order
+s.order
+p+q
+p*q
+r+s
+r*s
+s/r
+r*numpy.poly1d([1,0,2])+3 == s
+r(0)
+s(2)
+r.r
+s.r
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
