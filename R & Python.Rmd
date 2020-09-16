@@ -1,0 +1,19 @@
+---
+title: "R & Python"
+author: "Carlos Gonzales Muñoz"
+date: "12 de septiembre de 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Libreria Reticulate
+
+```{r}
+library(reticulate)
+os <- import("os")
+os$listdir(".")
+
+```

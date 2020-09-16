@@ -6,6 +6,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+library(reticulate)
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(engine.path = list(octave = "C:/Octave/Octave-5.2.0/mingw32/bin/octave-cli-5.2.0.exe"))
 library(magic)
