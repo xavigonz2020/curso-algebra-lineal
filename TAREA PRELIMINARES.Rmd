@@ -1,0 +1,83 @@
+---
+title: "TAREA PRELIMINARES"
+author: "xavigonz"
+date: "17/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(polynom) #LIBRERIA R PARA POLINOMIOS
+library(pracma) #LIBRERIA R PARA POLINOMIOS
+library(reticulate) #LIBRERIA PARA USAR PYTHON EN R
+```
+
+## Pregunta 2
+
+(2+3i) + (1+i)
+
+```{r}
+p = 2+3i
+q = 1+1i
+p+q
+```
+
+(1+i) + (1-i)
+
+```{r}
+p = 1+1i
+q = 1-1i
+p+q
+```
+
+(x^2+x+1) + (x-1)
+
+```{r}
+p = polynomial(coef =c(1,1,1))
+p
+              
+q = polynomial(coef =c(-1,1))
+q
+
+p+q
+```
+
+## Pregunta 3
+
+(2+3i)(1+i)
+
+```{r}
+p = 2+3i
+q = 1+1i
+p*q
+```
+
+(1+i)(1-i)
+
+```{r}
+(1+1i)*(1-1i)
+```
+
+(x^2+x+1)(x-1)
+
+```{r}
+p = polynomial(coef = c(1,1,1))
+q = polynomial(coef = c(-1,1))
+p*q
+```
+
+(x+1)^2
+
+```{r}
+p = polynomial(coef = c(1,1))
+p^2
+```
+
+(x+1)(x-1)
+
+```{r}
+p = polynomial(coef = c(1,1))
+q = polynomial(coef = c(-1,1))
+p*q
+```
+
