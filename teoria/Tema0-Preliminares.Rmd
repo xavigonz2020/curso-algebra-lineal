@@ -1,17 +1,18 @@
 ---
 title: "Tema 0 - Preliminares"
 author: "Juan Gabriel Gomila & María Santos"
-date: 
-output: 
+date: "null"
+output:
   ioslides_presentation:
-    widescreen: true
     css: Mery_style.css
     logo: Images/matriz_mov.gif
+    widescreen: yes
+  slidy_presentation: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA, engine.path = list(
-  octave = '/Applications/Octave-4.4.1.app/Contents/Resources/usr/bin/octave'
+  octave = 'C:/Octave/Octave-5.2.0/mingw64/bin/octave-cli-5.2.0.exe'
 ))
 library(polynom)
 library(pracma)
@@ -332,7 +333,7 @@ Lo que está entre comillas es la dirección donde se encuentra el lenguaje `Oct
 Podemos definir números complejos de diferentes formas:
 
 ```{octave}
-z1 = complex(1,2)
+z1 =  complex(1,2)
 z2 = 2-i
 tipoDato1 = class(z1)
 tipoDato2 = class(z2)
